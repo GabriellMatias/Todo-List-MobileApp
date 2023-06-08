@@ -1,20 +1,15 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { View, StatusBar } from 'react-native'
+import { Home } from './src/components/Home'
+import React from 'react'
+import { TaskProvider } from './src/hooks/useTasks'
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+    <TaskProvider>
+      <View style={{ backgroundColor: '#191919', flex: 1 }}>
+        <StatusBar barStyle={'light-content'} translucent />
+        <Home />
+      </View>
+    </TaskProvider>
+  )
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
